@@ -1,4 +1,4 @@
-package com.Parthip.pixabay.ui.theme
+package com.Parthip.pixabayApi.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
