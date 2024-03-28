@@ -1,4 +1,4 @@
-package com.Parthip.pixabay
+package com.Parthip.pixabayApi
 
 import org.junit.Test
 
