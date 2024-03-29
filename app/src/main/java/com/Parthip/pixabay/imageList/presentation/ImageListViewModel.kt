@@ -21,7 +21,7 @@ class ImageListViewModel @Inject constructor(
     val imageListState = _imageListState.asStateFlow()
 
     init {
-        getImageList(false, 1, 20)
+        getImageList(false)
     }
 
     fun onEvent(event: ImageListUIE) {
@@ -35,18 +35,18 @@ class ImageListViewModel @Inject constructor(
             }
 
             is ImageListUIE.Paginate -> {
-                getImageList(true,1,20)
+                getImageList(true)
             }
         }
     }
 
-    fun getImageList(forceFetchFromRemote: Boolean, page: Int, perPage: Int) {
+    fun getImageList(forceFetchFromRemote: Boolean) {
         viewModelScope.launch {
             _imageListState.update {
                 it.copy(isLoading = true)
             }
 
-            imageListRepository.getImageList(forceFetchFromRemote, page, perPage).collectLatest { hits ->
+            imageListRepository.getImageList(forceFetchFromRemote).collectLatest { hits ->
                 when (hits) {
                     is Resource.Error -> {
                         _imageListState.update {

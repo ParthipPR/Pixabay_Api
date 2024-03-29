@@ -22,8 +22,6 @@ class ImageListRepositoryImpl @Inject constructor(
     @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
     override suspend fun getImageList(
         forceFetchFromRemote: Boolean,
-        page: Int,
-        perpage: Int
     ): Flow<Resource<List<Image>>> {
        return flow{
             emit(Resource.Loading(true))
@@ -44,7 +42,7 @@ class ImageListRepositoryImpl @Inject constructor(
            }
 
            val imageListFromApi = try {
-               pixabayApi.getImageList(perpage, page)
+               pixabayApi.getImageList()
            } catch ( e: IOException) {
                e.printStackTrace()
                emit(Resource.Error(message = "Error loading images"))

@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Pixabay</string>
-    <string name="main_page">Main Page</string>
+    <string name="main_page">Pixabay</string>
     <string name="details_page">Details Page</string>
 </resources>

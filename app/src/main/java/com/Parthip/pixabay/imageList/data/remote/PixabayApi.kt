@@ -8,8 +8,6 @@ interface PixabayApi {
 
     @GET("api/")
     suspend fun getImageList(
-        @Query("per_page") perpage: Int,
-        @Query("page") page: Int,
         @Query("key") key: String = API_KEY
     ): ImageListDTO
 

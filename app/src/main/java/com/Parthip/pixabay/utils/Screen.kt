@@ -5,5 +5,6 @@ package com.Parthip.pixabay.utils
  */
 sealed class Screen(val rout: String) {
     object Home : Screen("main")
+    object ImageList: Screen("ImageList")
     object Details : Screen("details")
 }
